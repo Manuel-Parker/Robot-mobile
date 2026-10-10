@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contrôle du Robot Mobile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="servotron_window.css">
+  <script type="module" src="servotron_window.js"></script>
+</head>
+<body>
+  <h1>Contrôle du Robot Mobile</h1>
+
+  <div class="control-panel">
+
+    <div class="left-panel">
+      <button class="btn-avancer" data-hold="avancer" aria-label="Avancer"><i class="fas fa-arrow-up"></i></button>
+      <button class="btn-reculer" data-hold="reculer" aria-label="Reculer"><i class="fas fa-arrow-down"></i></button>
+    </div>
+
+    <div class="right-panel">
+      <div class="mode-container">
+        <div class="dropdown" id="formes">
+          <button class="btn-mode" id="formesToggle">Formes</button>
+          <div class="dropdown-content">
+            <button data-cmd="forme:cercle">Cercle</button>
+            <button data-cmd="forme:carre">Carré</button>
+            <button data-cmd="forme:triangle">Triangle</button>
+          </div>
+        </div>
+        <button class="btn-mode" data-cmd="ligne">Suivi de Ligne</button>
+        <button class="btn-mode" data-cmd="evitement">Evitement d'Obstacle</button>
+      </div>
+
+      <div class="horizontal-movement">
+        <button class="btn-gauche" data-hold="gauche" aria-label="Gauche"><i class="fas fa-arrow-left"></i></button>
+        <button class="btn-droite" data-hold="droite" aria-label="Droite"><i class="fas fa-arrow-right"></i></button>
+      </div>
+
+      <button class="btn-stop" data-cmd="stop"><i class="fas fa-square"></i> Stop</button>
+    </div>
+
+  </div>
+
+  <div class="speed-control">
+    <label for="speed-range">Vitesse</label>
+    <input type="range" id="speed-range" min="0" max="100" value="50" step="1">
+    <span id="speed-value">50</span>%
+  </div>
+</body>
+</html>
